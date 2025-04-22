@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Matriculas_ITM.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -10,7 +11,7 @@ namespace Matriculas_ITM
         public static void Register(HttpConfiguration config)
         {
             // Configuración y servicios de Web API
-
+            config.MessageHandlers.Add(new TokenValidationHandler());
             // Rutas de Web API
             config.MapHttpAttributeRoutes();
 

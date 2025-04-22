@@ -11,7 +11,7 @@ using System.Web;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Servicios_6_8.Clases
+namespace Matriculas_ITM.Clases
 {
     public class TokenValidationHandler : DelegatingHandler
     {

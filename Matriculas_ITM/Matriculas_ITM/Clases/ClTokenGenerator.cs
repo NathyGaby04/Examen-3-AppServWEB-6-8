@@ -11,7 +11,7 @@ using System.Threading;
 using System.Web;
 using System.Security.Claims;
 
-namespace Servicios_6_8.Clases
+namespace Matriculas_ITM.Clases
 {
     public static class TokenGenerator
     {
