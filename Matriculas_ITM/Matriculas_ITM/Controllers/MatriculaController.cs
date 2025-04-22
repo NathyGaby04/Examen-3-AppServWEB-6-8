@@ -15,24 +15,24 @@ namespace Matriculas_ITM.Controllers
     public class MatriculaController : ApiController
     {
         [HttpGet]
-        [Route("Consultar")]
-        public Matricula ConsultarImagenes(int idMatricula)
+        [Route("ConsultarMatricula")]
+        public Matricula ConsultarMatricula(int idMatricula)
         {
             ClMatricula Matricula = new ClMatricula();
             return Matricula.Consultar(idMatricula);
         }
 
         [HttpGet]
-        [Route("ConsultarDocumento")]
-        public List<Matricula> ConsultarDocumento(int dcEstudiante)
+        [Route("ConsultarXDocumento")]
+        public List<Matricula> ConsultarXDocumento(string dcEstudiante)
         {
             ClMatricula Matricula = new ClMatricula();
             return Matricula.ConsultarDocumento(dcEstudiante);
         }
 
         [HttpGet]
-        [Route("ConsultarSemestre")]
-        public List<Matricula> Consultar(string semestreMatricula)
+        [Route("ConsultarXSemestre")]
+        public List<Matricula> ConsultarXSemestre(string semestreMatricula)
         {
             ClMatricula Matricula = new ClMatricula();
             return Matricula.ConsultarSemestre(semestreMatricula);

@@ -217,10 +217,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Clases\ClEstudiante.cs" />
     <Compile Include="Clases\ClMatricula.cs" />
+    <Compile Include="Clases\ClLogin.cs" />
     <Compile Include="Clases\ClTokenGenerator.cs" />
     <Compile Include="Clases\ClTokenValidationHandler.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MatriculaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -228,6 +232,7 @@
     <Compile Include="Models\Estudiante.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\libLogin.cs" />
     <Compile Include="Models\Matricula.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

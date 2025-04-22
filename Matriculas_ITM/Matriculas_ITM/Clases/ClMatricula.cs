@@ -15,6 +15,7 @@ namespace Matriculas_ITM.Clases
         {
             try
             {
+                matricula.TotalMatricula = matricula.NumeroCreditos * matricula.ValorCredito;
                 dBExamen3.Matriculas.Add(matricula);
                 dBExamen3.SaveChanges();
                 return "Matricula insertada correctamente";
@@ -35,6 +36,7 @@ namespace Matriculas_ITM.Clases
                 {
                     return "La matricula con el id ingresado no existe, por lo tanto no se puede actualizar";
                 }
+                matricula.TotalMatricula = matricula.NumeroCreditos * matricula.ValorCredito;
                 dBExamen3.Matriculas.AddOrUpdate(matricula);
                 dBExamen3.SaveChanges();
                 return "Se actualizó la matricula correctamente";
@@ -51,8 +53,10 @@ namespace Matriculas_ITM.Clases
         {
             return dBExamen3.Matriculas.FirstOrDefault(e => e.idMatricula == idMatricula);
         }
-        public List<Matricula> ConsultarDocumento(int idEstudiante)
+        public List<Matricula> ConsultarDocumento(string dcEstudiante)
         {
+            clsEstudiante estu = new clsEstudiante();
+            int idEstudiante = estu.Consultar(dcEstudiante).idEstudiante;
             return dBExamen3.Matriculas
                 .Where(e => e.idEstudiante == idEstudiante)
                 .OrderBy(e => e.SemestreMatricula)
@@ -71,7 +75,7 @@ namespace Matriculas_ITM.Clases
         {
             try
             {
-                Matricula mtc = Consultar(matricula.idMatricula);
+                Matricula mtc = Consultar(idMatricula);
                 if (mtc == null)
                 {
                     return "La matricula con el id ingresado no existe, por lo tanto no se puede eliminar";
