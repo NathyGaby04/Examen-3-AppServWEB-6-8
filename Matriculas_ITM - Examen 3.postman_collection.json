@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "a63da2de-e3a0-454e-8c89-2a41bc8203e8",
+		"name": "Matriculas_ITM | Examen 3",
+		"description": "Parcial #3 de la materia Servicios y Aplicaciones Web de Miércoles de 6 a 8am.  \n  \nIntegrantes del grupo:\n\n- Nathalie Gabriela Miranda Rejón\n    \n- Samuel Quiroz Rincón",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43028144"
+	},
+	"item": [
+		{
+			"name": "Matriculas",
+			"item": [
+				{
+					"name": "Insertar Matricula",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMatricula\": 1,\r\n    \"idEstudiante\": 1,\r\n    \"NumeroCreditos\": 10,\r\n    \"ValorCredito\" : 156000,\r\n    \"TotalMatricula\" : \"\",\r\n    \"FechaMatricula\" : \"04-22-2025\",\r\n    \"SemestreMatricula\" : \"2025-1\",\r\n    \"MateriasMatriculadas\" : \"Matemáticas Básicas, Inglés I, Habilidades Comunicativas, Geometría Vectorial\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_matricula}}Insertar",
+							"host": [
+								"{{base_url_matricula}}Insertar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarMatricula",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_matricula}}ConsultarMatricula?idMatricula=1",
+							"host": [
+								"{{base_url_matricula}}ConsultarMatricula"
+							],
+							"query": [
+								{
+									"key": "idMatricula",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarXDocumento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_matricula}}ConsultarXDocumento?dcEstudiante=12345",
+							"host": [
+								"{{base_url_matricula}}ConsultarXDocumento"
+							],
+							"query": [
+								{
+									"key": "dcEstudiante",
+									"value": "12345"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarXSemestre",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_matricula}}ConsultarXSemestre?semestreMatricula=2025-1",
+							"host": [
+								"{{base_url_matricula}}ConsultarXSemestre"
+							],
+							"query": [
+								{
+									"key": "semestreMatricula",
+									"value": "2025-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Matricula",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMatricula\": 1,\r\n    \"idEstudiante\": 1,\r\n    \"NumeroCreditos\": 10,\r\n    \"ValorCredito\" : 180000,\r\n    \"TotalMatricula\" : \"\",\r\n    \"FechaMatricula\" : \"04-22-2025\",\r\n    \"SemestreMatricula\" : \"2025-1\",\r\n    \"MateriasMatriculadas\" : \"Matemáticas Básicas, Inglés I, Habilidades Comunicativas, Geometría Vectorial\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_matricula}}Actualizar",
+							"host": [
+								"{{base_url_matricula}}Actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Matricula",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_matricula}}Eliminar?CodigoMatricula=1",
+							"host": [
+								"{{base_url_matricula}}Eliminar"
+							],
+							"query": [
+								{
+									"key": "CodigoMatricula",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Ingresar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Usuario\": \"Pepito*PErez\",\r\n    \"Clave\": \"123*\",\r\n    \"PaginaSolicitud\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_login}}Ingresar",
+							"host": [
+								"{{base_url_login}}Ingresar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlBlcGl0bypQRXJleiIsIm5iZiI6MTc0NTM2NDQzMiwiZXhwIjoxNzQ1MzY5ODMyLCJpYXQiOjE3NDUzNjQ0MzIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NDQzMTMiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjQ0MzEzIn0.yPpyY6afQxniqW8cV5k-CH3TzyfCZ5tC76sp8fBQQdE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_matricula",
+			"value": "https://localhost:44376/api/Matricula/",
+			"type": "string"
+		},
+		{
+			"key": "base_url_login",
+			"value": "https://localhost:44376/api/Login/",
+			"type": "string"
+		}
+	]
+}
